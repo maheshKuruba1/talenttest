@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<talendfile:ContextType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" xmi:id="_welUoO7OEeujktY-t7Pk6A" confirmationNeeded="false" name="Default">
-  <contextParameter xmi:id="_welUoe7OEeujktY-t7Pk6A" comment="" name="WS_WEFIN_Url" prompt="WS_WEFIN_Url?" promptNeeded="false" type="id_String" value=""/>
-  <contextParameter xmi:id="_welUou7OEeujktY-t7Pk6A" comment="" name="WS_WEFIN_Uri_Export_GetMasterData" prompt="WS_WEFIN_Uri_Export_GetMasterData?" promptNeeded="false" type="id_String" value=""/>
-  <contextParameter xmi:id="_welUo-7OEeujktY-t7Pk6A" comment="" name="WS_WEFIN_Uri_Import_CreateProjects" prompt="WS_WEFIN_Uri_Import_CreateProjects?" promptNeeded="false" type="id_String" value=""/>
-  <contextParameter xmi:id="_welUpO7OEeujktY-t7Pk6A" comment="" name="WS_WEFIN_Uri_Import_UpdateProjects" prompt="WS_WEFIN_Uri_Import_UpdateProjects?" promptNeeded="false" type="id_String" value=""/>
-  <contextParameter xmi:id="_welUpe7OEeujktY-t7Pk6A" comment="" name="WS_WEFIN_Uri_GetMostRecentExpatriatesPositions" prompt="WS_WEFIN_Uri_GetMostRecentExpatriatesPositions?" promptNeeded="false" type="id_String" value=""/>
-  <contextParameter xmi:id="_welUpu7OEeujktY-t7Pk6A" comment="" name="WS_WEFIN_Token_ImportExport" prompt="WS_WEFIN_Token_ImportExport?" promptNeeded="false" type="id_String" value=""/>
-</talendfile:ContextType>

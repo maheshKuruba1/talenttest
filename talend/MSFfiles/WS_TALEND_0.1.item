@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<talendfile:ContextType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" xmi:id="_Kg2nsEDzEeqqDc_HDkQEiA" confirmationNeeded="false" name="Default">
-  <contextParameter xmi:id="_R27dYEDzEeqqDc_HDkQEiA" comment="" name="WS_TALEND_Url_Employee" prompt="WS_TALEND_Url_Employee?" promptNeeded="false" type="id_String" value=""/>
-  <contextParameter xmi:id="_R27dYUDzEeqqDc_HDkQEiA" comment="" name="WS_TALEND_Login" prompt="WS_TALEND_Login?" promptNeeded="false" type="id_String" value=""/>
-  <contextParameter xmi:id="_R27dYkDzEeqqDc_HDkQEiA" comment="" name="WS_TALEND_Password" prompt="WS_TALEND_Password?" promptNeeded="false" type="id_Password" value=""/>
-  <contextParameter xmi:id="_1ggk8EDzEeqqDc_HDkQEiA" comment="" name="WS_TALEND_Path_Employee" prompt="WS_TALEND_Path_Employee?" promptNeeded="false" type="id_String" value=""/>
-</talendfile:ContextType>

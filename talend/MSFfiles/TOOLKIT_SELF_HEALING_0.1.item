@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<talendfile:ContextType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" xmi:id="_OBDkkGaIEe2vmtsnr7zy4Q" confirmationNeeded="false" name="Default">
-  <contextParameter xmi:id="_OBDkkWaIEe2vmtsnr7zy4Q" comment="" name="TOOLKIT_SELF_HEALING_z_score" prompt="TOOLKIT_SELF_HEALING_z_score?" promptNeeded="false" repositoryContextId="built-in" type="id_Float" value="3"/>
-  <contextParameter xmi:id="_OBDkkmaIEe2vmtsnr7zy4Q" comment="" name="TOOLKIT_SELF_HEALING_z_email" prompt="TOOLKIT_SELF_HEALING_z_email?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value=""/>
-  <contextParameter xmi:id="_OBDkk2aIEe2vmtsnr7zy4Q" comment="" name="TOOLKIT_SELF_HEALING_z_time" prompt="TOOLKIT_SELF_HEALING_z_time?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value=""/>
-  <contextParameter xmi:id="_regaoJM2Ee2SnpN4Xgtlxw" comment="" name="TOOLKIT_SELF_HEALING_Multiple_Execution_Job" prompt="TOOLKIT_SELF_HEALING_Multiple_Execution_Job?" promptNeeded="false" repositoryContextId="built-in" type="id_Integer" value="0"/>
-</talendfile:ContextType>
