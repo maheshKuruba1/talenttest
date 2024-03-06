@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<talendfile:ContextType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" xmi:id="_ssjrALsSEeyh_78SMZRUvQ" confirmationNeeded="false" name="Default">
+  <contextParameter xmi:id="_ssjrAbsSEeyh_78SMZRUvQ" comment="" name="TOOLKIT_HASURA_API_URL" prompt="TOOLKIT_HASURA_API_URL?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value=""/>
+  <contextParameter xmi:id="_ssjrArsSEeyh_78SMZRUvQ" comment="" name="TOOLKIT_HASURA_API_SECRET" prompt="TOOLKIT_HASURA_API_SECRET?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value=""/>
+</talendfile:ContextType>

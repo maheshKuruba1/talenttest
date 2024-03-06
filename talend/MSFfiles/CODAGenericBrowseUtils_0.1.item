@@ -1,0 +1,56 @@
+package routines;
+
+import java.util.Map;
+
+import org.apache.commons.lang3.ArrayUtils;
+import org.apache.commons.lang3.StringUtils;
+
+public class CODAGenericBrowseUtils {
+	
+	public static final String DATASET_ROWS = "//sel:DataSet/sel:Row";
+
+	public static void initCellIndexes(final Map<String,Object> globalMap, final String prefix, final String[] columnNames, final String body) {
+		
+		if(StringUtils.isEmpty(body)) {
+			throw new RuntimeException("no body when initialising cells for prefix "+prefix);
+		}
+		
+		final String tableHeader = StringUtils.substringBetween(body, "<sel:Header><sel:Cells>", "</sel:Cells></sel:Header>");
+		
+		final String[] cells = StringUtils.substringsBetween(tableHeader, "<sel:Cell>", "</sel:Cell>");
+		
+		for(final String columnName : columnNames) {
+			
+			final String key = prefix+"-"+columnName;
+			
+			final int cellIndex = ArrayUtils.indexOf(cells, columnName);
+			
+			if(cellIndex == -1) {
+				throw new RuntimeException("Prefix "+prefix+": cannot find cell "+columnName+" in body "+body+", globalMap="+globalMap);
+			}
+			
+			globalMap.put(key, Integer.valueOf(cellIndex));
+			
+		}
+		
+	}
+	
+	public static String getCellXPath(final Map<String,Object> globalMap, final String prefix, final String columnName) {
+		
+		final String key = prefix+"-"+columnName;
+		
+		final Integer colIdx = (Integer)globalMap.get(key);
+		
+		if(colIdx == null) {
+			throw new RuntimeException("Cannot find index for column "+key+", globalMap="+globalMap);
+		}
+
+		/*
+		 * we use PLUS ONE because XPATH arrays are 1-indexed.
+		 * 
+		 */
+		return "sel:Cells/sel:Cell["+(colIdx.intValue()+1)+"]/text()";
+
+	}
+	
+}

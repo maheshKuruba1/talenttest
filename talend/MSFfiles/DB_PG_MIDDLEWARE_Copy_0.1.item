@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TalendMetadata:DatabaseConnection xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:TalendMetadata="http://www.talend.org/metadata/connection/2010" xmi:id="_jI1K4GAhEeyekP6F1TSmZA" name="DB_PG_MIDDLEWARE" id="_TJfUUCy6EeuLm6dRlu6edQ" label="DB_PG_MIDDLEWARE" ContextMode="true" ContextId="_YkpVcCy6EeuLm6dRlu6edQ" contextName="Default" DatabaseType="PostgreSQL" DriverClass="org.postgresql.Driver" URL="jdbc:postgresql://:5432/?" dbVersionString="V9_X" Port="context.DB_PG_MIDDLEWARE_Port" Username="context.DB_PG_MIDDLEWARE_Login" Password="context.DB_PG_MIDDLEWARE_Password" ServerName="context.DB_PG_MIDDLEWARE_Server" DatasourceName="" FileFieldName="" SID="context.DB_PG_MIDDLEWARE_Database" SqlSynthax="" StringQuote="" NullChar="" DbmsId="postgres_id" ProductId="POSTGRESQL" AdditionalParams="context.DB_PG_MIDDLEWARE_AdditionalParams" StandardSQL="true" SQLMode="false" UiSchema="context.DB_PG_MIDDLEWARE_Schema">
+  <taggedValue xmi:id="_Y5QTgSy6EeuLm6dRlu6edQ" tag="Is Conn Need Reload" value="false"/>
+  <taggedValue xmi:id="_Y5nf4Cy6EeuLm6dRlu6edQ" tag="package filter" value=""/>
+  <taggedValue xmi:id="_Y5oG8Cy6EeuLm6dRlu6edQ" tag="Status" value=""/>
+  <taggedValue xmi:id="_Y5oG8Sy6EeuLm6dRlu6edQ" tag="Version" value="0.1"/>
+  <taggedValue xmi:id="_Y5oG8iy6EeuLm6dRlu6edQ" tag="Purpose" value=""/>
+  <taggedValue xmi:id="_Y5oG8yy6EeuLm6dRlu6edQ" tag="Description" value=""/>
+  <taggedValue xmi:id="_Y5oG9Cy6EeuLm6dRlu6edQ" tag="Author" value=""/>
+  <taggedValue xmi:id="_Y5oG9Sy6EeuLm6dRlu6edQ" tag="otherParameter"/>
+  <parameters xmi:id="_Y5QTgiy6EeuLm6dRlu6edQ" key="CONN_PARA_KEY_USERNAME" value="context.DB_PG_MIDDLEWARE_Login"/>
+</TalendMetadata:DatabaseConnection>

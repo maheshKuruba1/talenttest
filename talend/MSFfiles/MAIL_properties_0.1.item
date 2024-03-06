@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<talendfile:ContextType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" xmi:id="_60PZsBYGEeyBoolAasKOoQ" confirmationNeeded="false" name="Default">
+  <contextParameter xmi:id="_60PZsRYGEeyBoolAasKOoQ" comment="" name="MAIL_to" prompt="MAIL_to?" promptNeeded="false" type="id_String" value=""/>
+  <contextParameter xmi:id="_60PZshYGEeyBoolAasKOoQ" comment="" name="MAIL_from" prompt="MAIL_from?" promptNeeded="false" type="id_String" value=""/>
+  <contextParameter xmi:id="_60PZsxYGEeyBoolAasKOoQ" comment="" name="MAIL_cc" prompt="MAIL_cc?" promptNeeded="false" type="id_String" value=""/>
+  <contextParameter xmi:id="_60PZtBYGEeyBoolAasKOoQ" comment="" name="MAIL_smpt" prompt="MAIL_smpt?" promptNeeded="false" type="id_String" value=""/>
+  <contextParameter xmi:id="_60PZtRYGEeyBoolAasKOoQ" comment="" name="MAIL_smpt_port" prompt="MAIL_smpt_port?" promptNeeded="false" type="id_String" value=""/>
+  <contextParameter xmi:id="_60PZthYGEeyBoolAasKOoQ" comment="" name="MAIL_login" prompt="MAIL_login?" promptNeeded="false" type="id_String" value=""/>
+  <contextParameter xmi:id="_60PZtxYGEeyBoolAasKOoQ" comment="" name="MAIL_password" prompt="MAIL_password?" promptNeeded="false" type="id_String" value=""/>
+  <contextParameter xmi:id="_60PZuBYGEeyBoolAasKOoQ" comment="" name="MAIL_block" prompt="MAIL_block?" promptNeeded="false" type="id_String" value=""/>
+</talendfile:ContextType>

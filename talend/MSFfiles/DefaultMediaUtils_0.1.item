@@ -1,0 +1,29 @@
+package routines;
+
+import java.util.StringTokenizer;
+
+public class DefaultMediaUtils {
+
+   
+	/**
+	 * 
+	 * @param accountNumber BE12 1234 4567 8965 
+	 * @param isIBAN true/false
+	 * @param europeanPrefixList BE,FR,GB,IT,...
+	 * @return
+	 */
+    public static String getDefaultMedia(String accountNumber, Boolean isIBAN, String europeanPrefixList) {
+    	if ( isIBAN != null && isIBAN == false)
+    		return "NONSEPA";
+    	StringTokenizer st = new StringTokenizer(europeanPrefixList,",");
+    	while(st.hasMoreTokens()) {
+    		String XX = st.nextToken(); // BE
+    		System.out.println("=== "+XX + " : "+ accountNumber);
+    		if (accountNumber.startsWith(XX))
+    			return "SEPA";
+    	}
+    	return "NONSEPA";
+    }
+    
+    
+}

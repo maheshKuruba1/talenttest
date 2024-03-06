@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<talendfile:ContextType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" xmi:id="_mhPBUBe4EeyaMegLZl__iQ" confirmationNeeded="false" name="Default">
+  <contextParameter xmi:id="_mhPBURe4EeyaMegLZl__iQ" comment="" name="configDir" prompt="configDir?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value=""/>
+  <contextParameter xmi:id="_mhPBUhe4EeyaMegLZl__iQ" comment="" name="a_interface_exec_id" prompt="a_interface_exec_id?" promptNeeded="false" repositoryContextId="built-in" type="id_Integer" value="-1"/>
+  <contextParameter xmi:id="_mhPBUxe4EeyaMegLZl__iQ" comment="" name="mdwr_shared_connection" prompt="mdwr_shared_connection?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value=""/>
+  <contextParameter xmi:id="_mhPBVBe4EeyaMegLZl__iQ" comment="" name="child_job" prompt="child_job?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="&quot;false&quot;"/>
+  <contextParameter xmi:id="_mhPBVRe4EeyaMegLZl__iQ" comment="working directory that can be empty" name="workingDir" prompt="workingDir?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value=""/>
+  <contextParameter xmi:id="_mhPBVhe4EeyaMegLZl__iQ" comment="" name="execution_author" prompt="execution_author?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value=""/>
+  <contextParameter xmi:id="_mhPBVxe4EeyaMegLZl__iQ" comment="" name="interfaceExecId" prompt="interfaceExecId?" promptNeeded="false" repositoryContextId="built-in" type="id_Integer" value="-1"/>
+  <contextParameter xmi:id="_mhPBWBe4EeyaMegLZl__iQ" comment="directory used to store files shown in the console" name="consoleFilestoreDir" prompt="consoleFilestoreDir?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value=""/>
+  <contextParameter xmi:id="_mhPBWRe4EeyaMegLZl__iQ" comment="" name="documentDir" prompt="documentDir?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value=""/>
+  <contextParameter xmi:id="_mhPBWhe4EeyaMegLZl__iQ" comment="" name="trigger_type" prompt="trigger_type?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value=""/>
+  <contextParameter xmi:id="_UdxmkGv9Ee2anoQz_JIQDg" comment="" name="env" prompt="env?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value=""/>
+  <contextParameter xmi:id="_47zgwKiAEe2UOfYoEoGlwQ" comment="" name="os" prompt="os?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value=""/>
+</talendfile:ContextType>

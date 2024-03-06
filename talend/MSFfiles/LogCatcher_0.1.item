@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<talendfile:ContextType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" xmi:id="_60KhMBYGEeyBoolAasKOoQ" confirmationNeeded="false" name="Default">
+  <contextParameter xmi:id="_60KhMRYGEeyBoolAasKOoQ" comment="" name="moment" prompt="moment?" promptNeeded="false" type="id_Date" value=""/>
+  <contextParameter xmi:id="_60KhMhYGEeyBoolAasKOoQ" comment="" name="pid" prompt="pid?" promptNeeded="false" type="id_String" value=""/>
+  <contextParameter xmi:id="_60KhMxYGEeyBoolAasKOoQ" comment="" name="root_pid" prompt="root_pid?" promptNeeded="false" type="id_String" value=""/>
+  <contextParameter xmi:id="_60KhNBYGEeyBoolAasKOoQ" comment="" name="father_pid" prompt="father_pid?" promptNeeded="false" type="id_String" value=""/>
+  <contextParameter xmi:id="_60KhNRYGEeyBoolAasKOoQ" comment="" name="poject" prompt="poject?" promptNeeded="false" type="id_String" value=""/>
+  <contextParameter xmi:id="_60KhNhYGEeyBoolAasKOoQ" comment="" name="job" prompt="job?" promptNeeded="false" type="id_String" value=""/>
+  <contextParameter xmi:id="_60KhNxYGEeyBoolAasKOoQ" comment="" name="context" prompt="context?" promptNeeded="false" type="id_String" value=""/>
+  <contextParameter xmi:id="_60KhOBYGEeyBoolAasKOoQ" comment="" name="priority" prompt="priority?" promptNeeded="false" type="id_Integer" value="-1"/>
+  <contextParameter xmi:id="_60KhORYGEeyBoolAasKOoQ" comment="" name="type" prompt="type?" promptNeeded="false" type="id_String" value=""/>
+  <contextParameter xmi:id="_60KhOhYGEeyBoolAasKOoQ" comment="" name="origin" prompt="origin?" promptNeeded="false" type="id_String" value=""/>
+  <contextParameter xmi:id="_60KhOxYGEeyBoolAasKOoQ" comment="" name="message" prompt="message?" promptNeeded="false" type="id_String" value=""/>
+  <contextParameter xmi:id="_60KhPBYGEeyBoolAasKOoQ" comment="" name="code" prompt="code?" promptNeeded="false" type="id_Integer" value="-1"/>
+  <contextParameter xmi:id="_60KhPRYGEeyBoolAasKOoQ" comment="" name="project" prompt="project?" promptNeeded="false" type="id_String" value=""/>
+</talendfile:ContextType>

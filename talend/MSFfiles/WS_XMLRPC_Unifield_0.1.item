@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<talendfile:ContextType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" xmi:id="_we3BcO7OEeujktY-t7Pk6A" confirmationNeeded="false" name="Default">
+  <contextParameter xmi:id="_we3Bce7OEeujktY-t7Pk6A" comment="" name="WS_XMLRPC_Unifield_url_common" prompt="WS_XMLRPC_Unifield_url_common?" promptNeeded="false" type="id_String" value=""/>
+  <contextParameter xmi:id="_we3Bcu7OEeujktY-t7Pk6A" comment="" name="WS_XMLRPC_Unifield_url_object" prompt="WS_XMLRPC_Unifield_url_object?" promptNeeded="false" type="id_String" value=""/>
+  <contextParameter xmi:id="_we3Bc-7OEeujktY-t7Pk6A" comment="" name="WS_XMLRPC_Unifield_login" prompt="WS_XMLRPC_Unifield_login?" promptNeeded="false" type="id_String" value=""/>
+  <contextParameter xmi:id="_we3BdO7OEeujktY-t7Pk6A" comment="" name="WS_XMLRPC_Unifield_password" prompt="WS_XMLRPC_Unifield_password?" promptNeeded="false" type="id_String" value=""/>
+  <contextParameter xmi:id="_we3Bde7OEeujktY-t7Pk6A" comment="" name="WS_XMLRPC_Unifield_dbname" prompt="WS_XMLRPC_Unifield_dbname?" promptNeeded="false" type="id_String" value=""/>
+  <contextParameter xmi:id="_we3Bdu7OEeujktY-t7Pk6A" comment="" name="WS_XMLRPC_Unifield_url_report" prompt="WS_XMLRPC_Unifield_url_report?" promptNeeded="false" type="id_String" value=""/>
+</talendfile:ContextType>
