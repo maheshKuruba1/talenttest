@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data_elements>
+  <data_element>
+    <name>vin</name>
+    <description>Vehicle Identification Number - a unique 17-character code.</description>
+    <data_type>string</data_type>
+    <format>Alphanumeric (17 characters)</format>
+    <source_system>Vehicle Registration System</source_system>
+    <owner>Legal Department</owner>
+    <data_steward>John Smith</data_steward>
+    <sensitivity_level>Confidential</sensitivity_level>
+    <related_terms>
+      <term>Vehicle ID</term>
+    </related_terms>
+    <business_rules>Must be unique across all vehicles.</business_rules>
+    <quality_rules>
+      <rule>
+        <rule_id>DQ_VIN_LENGTH</rule_id>
+        <description>VIN must be exactly 17 characters long</description>
+      </rule>
+      <rule>
+        <rule_id>DQ_VIN_UNIQUE</rule_id>
+        <description>VIN must be unique across all vehicle records.</description>
+      </rule>
+    </quality_rules>
+    <notes>Used for vehicle tracking, registration, and history.</notes>
+  </data_element>
+  <data_element>
+    <name>customer_email</name>
+    <description>The primary email address of the customer.</description>
+    <data_type>string</data_type>
+    <format>Valid email address format</format>
+    <source_system>Customer Relationship Management (CRM)</source_system>
+    <owner>Sales and Marketing Department</owner>
+    <data_steward>Alice Brown</data_steward>
+    <sensitivity_level>Personally Identifiable Information (PII)</sensitivity_level>
+    <related_terms>
+      <term>Email address</term>
+    </related_terms>
+    <business_rules>Should be a valid and deliverable email address.</business_rules>
+    <quality_rules>
+      <rule>
+        <rule_id>DQ_EMAIL_FORMAT</rule_id>
+        <description>Customer email must adhere to a standard email format.</description>
+      </rule>
+      <rule>
+        <rule_id>DQ_EMAIL_PRESENT</rule_id>
+        <description>Customer email is required for marketing communications.</description>
+      </rule>
+    </quality_rules>
+    <notes>Used for customer communication and marketing campaigns.</notes>
+  </data_element>
+</data_elements>
