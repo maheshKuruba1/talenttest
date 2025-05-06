@@ -1,0 +1,861 @@
+openapi: 3.0.4
+info:
+  title: Parts STAR
+  description: |-
+    Parts
+  termsOfService: https://swagger.io/terms/
+  version: "0.1"
+  contact:
+    email: apiteam@swagger.io
+paths: {}
+components:
+  schemas:
+    SparePart_1_2:
+      type: object
+      properties:
+        SparePart_1_2:
+          type: object
+          anyOf:
+            - $ref: '#/components/schemas/Description'
+            - $ref: '#/components/schemas/ExchangeCross'
+            - $ref: '#/components/schemas/Inventory'
+            - $ref: '#/components/schemas/InventoryType'
+            - $ref: '#/components/schemas/Part'
+            - $ref: '#/components/schemas/PartPrefix'
+            - $ref: '#/components/schemas/PartType'
+            - $ref: '#/components/schemas/PartsCatalog'
+            - $ref: '#/components/schemas/Price'
+            - $ref: '#/components/schemas/ReplacementCode'
+            - $ref: '#/components/schemas/SalesStatus'
+            - $ref: '#/components/schemas/SensitivityType'
+            - $ref: '#/components/schemas/SparePartPriceList'
+            - $ref: '#/components/schemas/SsQuantityUnitOfMeasure'
+            - $ref: '#/components/schemas/SupersedingPart'
+            - $ref: '#/components/schemas/Supersession'
+            - $ref: '#/components/schemas/SupersessionConsumptionCode'
+            - $ref: '#/components/schemas/SupersessionGroup'
+            - $ref: '#/components/schemas/SupersessionStatus'
+            - $ref: '#/components/schemas/SupersessionTypeCode'
+            - $ref: '#/components/schemas/SupersessionWHDetails'
+            - $ref: '#/components/schemas/UOM'
+            - $ref: '#/components/schemas/VitalCode'
+            - $ref: '#/components/schemas/VolumeUnitOfMeasure'
+            - $ref: '#/components/schemas/Warehouse'
+            - $ref: '#/components/schemas/WarehousePart'
+            - $ref: '#/components/schemas/WeightUnitOfMeasure'
+            - $ref: '#/components/schemas/CommercialCode' # Corrected name
+            - $ref: '#/components/schemas/ExchangeCode' # Corrected name
+    Description:
+      type: object
+      properties:
+        description:
+          type: string
+        language:
+          type: string
+          description: The language code is a combination of an ISO 639 two-letter lowercase culture code associated with a language and an ISO 3166 two-letter uppercase subculture code associated with a country or region.
+    ExchangeCross:
+      type: object
+      description: Provided when a Reman part is available
+      properties:
+        corePartNumber:
+          type: string
+          description: Core Part Number (Core part to return) = partNumber
+        corePartPrefix:
+          $ref: '#/components/schemas/PartPrefix'
+          description: Core Prefix (Core part to return) = partPrefix
+        remanPartNumber:
+          type: string
+          description: Reman Part Number (Remanufactured part) = partNumber
+        remanPartPrefix:
+          $ref: '#/components/schemas/PartPrefix'
+          description: Reman Prefix (Remanufactured part) = partPrefix
+    Inventory:
+      type: object
+      description: Need to further investigate on the relationship with Warehouse
+      properties:
+        Part:
+          type: array
+          items:
+            $ref: '#/components/schemas/Part'
+        inventoryType:
+          $ref: '#/components/schemas/InventoryType'
+          description: Type of Inventory
+        quantity:
+          type: integer
+          description: Quantity of Inventories available
+    InventoryType:
+      type: string
+      description: Type of Inventories
+      enum:
+        - quantityOnHand
+    Part:
+      type: object
+      properties:
+        Description:
+          type: array
+          items:
+            $ref: '#/components/schemas/Description'
+        ExchangeCross:
+          type: array
+          items:
+            $ref: '#/components/schemas/ExchangeCross'
+        Inventory:
+          type: array
+          items:
+            $ref: '#/components/schemas/Inventory'
+        PartsCatalog:
+          type: array
+          items:
+            $ref: '#/components/schemas/PartsCatalog'
+        Price:
+          type: array
+          items:
+            $ref: '#/components/schemas/Price'
+        SparePartPriceList:
+          type: array
+          items:
+            $ref: '#/components/schemas/SparePartPriceList'
+        SupersessionWHDetails:
+          type: array
+          items:
+            $ref: '#/components/schemas/SupersessionWHDetails'
+        WarehousePart:
+          type: array
+          items:
+            $ref: '#/components/schemas/WarehousePart'
+        changeDate:
+          type: string
+          format: date-time # Added format
+        changeReason:
+          type: string
+          description: Reason why the part was updated.
+        commercialCode:
+          $ref: '#/components/schemas/CommercialCode' # Corrected ref
+          description: GLOPPS term
+        engineeringRegistrationDate:
+          type: string
+          format: date-time # Added format
+          description: Date when the part was registered in PDM (Product Data Management) system
+        exchangeCode:
+          $ref: '#/components/schemas/ExchangeCode' # Corrected ref
+          description: It is the EXCHANGE_ID separated in 2 fields. exchangeCode + exchangeDescription
+        exchangeDescription:
+          type: string
+          description: |
+            It is the EXCHANGE_ID separated in 2 fields. exchangeCode + exchangeDescription
+            E.g.
+            <b>X = New part with Reman connection </b>
+            <b>R = Reman part</b>
+            <b>C = Core part </b>
+            <b>B = Bad Core part</b>
+        id:
+          type: string
+          description: Concatenation of partPrefix and partNumber separated by _I.e. VOE_123456789
+        isConfigurable:
+          type: boolean
+          description: Flag to say to Partslinq it is a configurable part
+        isExchangePart:
+          type: boolean
+          description: '<b>Filter parameter</b>'
+        isSparePart:
+          type: boolean
+          description: Sold as spare part or not
+        isSuperseded:
+          type: boolean
+          description: '<b>Filter parameter</b>'
+        mto:
+          type: boolean
+          description: Make To Order Flag - (Y or N) No stock available for these types of parts in the warehouse - Produced when ordered
+        partFunctionGroup:
+          type: string
+        partMarketingCode:
+          type: string
+        partMasterRegistrationDate:
+          type: string
+          format: date-time # Added format
+          description: Date when the part was registered from PLM (Product Lifecycle Management) system or direct in GLOPPS
+        partNumber:
+          type: string
+          description: |
+            <b>Part Number </b>is used in combination with Part Prefix in order to get a globally unique identifier of a part.
+            <b>Filter parameter</b>
+        partPrefix:
+          $ref: '#/components/schemas/PartPrefix'
+          description: |
+            <b>Filter parameter</b>
+            <b>Part Prefix </b>is used in combination with Part Number in order to get a globally unique identifier of a part.
+        partProductCode:
+          type: string
+        partProductGroup:
+          type: integer
+          description: |
+            Coming from SPIS - will be removed as part of the inspire project.
+            One level up above parts categories.
+            E.g.
+            700 - Engine parts
+            731 - Heating System
+        partProductLineCode:
+          type: integer
+          description: |
+            <b>Filter parameter</b>
+            VCE code that tells you in what machine range a part is used.
+            <b><i>E.g. </i></b>
+            1 - Articulated Hauler
+            2 - Wheel Loader
+        partType:
+          $ref: '#/components/schemas/PartType'
+        partsCategory:
+          type: integer
+          description: |
+            <b>Filter parameter</b>
+            The category of what the parts belong to.
+            E.g.
+            100 - Cylinder block
+            215 - Piston
+        responibilityYear:
+          type: string
+          description: Normally 10 years after the last machine was produced, based on Where Used information from COLS.
+            Last year of responsibility.
+        salesStatus:
+          $ref: '#/components/schemas/SalesStatus'
+        unitOfMeasure:
+          $ref: '#/components/schemas/UOM'
+        vitalCode:
+          $ref: '#/components/schemas/VitalCode'
+          description:
+            EPS:
+              Extended premium support PS: Premium support
+    PartPrefix:
+      type: string
+      description: '"VOE"'
+      enum:
+        - CH
+        - EH
+        - LGG
+        - MI
+        - PJ
+        - RM
+        - SA
+        - SBR
+        - SK
+        - SNA
+        - SP
+        - SRA
+        - TEL
+        - VOE
+        - ZM
+    PartType:
+      type: string
+      description: '"D"'
+      enum:
+        - B
+        - C
+        - D
+        - DOC
+        - ECU
+        - I
+        - K
+        - P
+        - R
+        - S
+    PartsCatalog:
+      type: object
+      properties:
+        catalogId:
+          type: string
+          description: |
+            At least one catalog per machine model but it can be several catalogs for one machine.
+            5 digit ID for the Parts Catalogue / Machine, e.g. 99528
+        machineModel:
+          type: string
+          description: '<b>Filter parameter</b>
+            E.g. L180H'
+        productionStartYear:
+          type: integer
+          description: |
+            When the Catalogue / Machine started to produce
+            (Maybe from Factory Master)
+            E.g. 2011
+    Price:
+      type: object
+      properties:
+        Part:
+          type: array
+          items:
+            $ref: '#/components/schemas/Part'
+        partPrice:
+          type: number
+        partPriceSensitivity:
+          $ref: '#/components/schemas/SensitivityType'
+        priceValidFromDate:
+          type: string
+          format: date-time
+        priceValidToDate:
+          type: string
+          format: date-time
+        typeOfPrice:
+          type: string
+    ReplacementCode:
+      type: string
+      description: Replacement Code Types
+      enum:
+        - '0 - not in replacement'
+        - '1 - after use up replaced part'
+        - '11 - after use up replaced part, preliminary replaced'
+        - '14 - after use up replaced part, preliminary replacement'
+        - '19 - after use up replaced part, no superssion part available, preliminary replaced'
+        - '2 - after goods reciept new part'
+        - '21 - after use up replaced part, final replaced'
+        - '22 - after goods reciept new part, final replaced'
+        - '23 - at a certain point in time, final replaced'
+        - '24 - After use up replaced part,final replaced'
+        - '25 - After goods reciept new part, not clerar supersession, final replaced'
+        - '29 - after use up replaced part, no superssion part available, final replaced'
+        - '4 - After use up replaced part'
+        - '5 - After goods reciept new part, not clerar supersession'
+        - '52 - Test part, at once at registration replaced, final replaced'
+        - '9 - after use up replaced part, no superssion part available'
+        - '91 - No delivery as spare part, at once at registration, final replaced'
+        - '99 - Superceeding part'
+    SalesStatus:
+      type: string
+      enum:
+        - Obsolete
+        - Sellable
+    SensitivityType:
+      type: string
+      enum:
+        - '1 - Low quantity, low price sensitivity'
+        - '2 - High quantity, low price sensitivity'
+        - '3 - Low quantity, high price sensitivity'
+        - '4 - High quantity, high price sensitivity'
+    SparePartPriceList:
+      type: object
+      properties:
+        Part:
+          type: array
+          items:
+            $ref: '#/components/schemas/Part'
+        currency:
+          type: string
+        priceListId:
+          type: string
+    SsQuantityUnitOfMeasure:
+      type: string
+      enum:
+        - L
+        - ea
+        - ft
+        - gal
+        - m
+        - milliliter
+    SupersedingPart:
+      type: object
+      properties:
+        SupersessionGroup:
+          type: array
+          items:
+            $ref: '#/components/schemas/SupersessionGroup'
+        ssPartNumber:
+          type: string
+          description: Superseding part number(s)
+
+            E.g. 22012779
+        ssPartPrefix:
+          $ref: '#/components/schemas/PartPrefix'
+          description: Part prefix.
+
+            E.g. VOE
+        ssQuantity:
+          type: integer # Changed type to integer
+          description: Quantity of replacing part (one or more). No of parts per added part number(s).
+
+            E.g. 1
+        ssQuantityUnitOfMeasure:
+          $ref: '#/components/schemas/SsQuantityUnitOfMeasure'
+    Supersession:
+      type: object
+      properties:
+        Part:
+          type: array
+          items:
+            $ref: '#/components/schemas/Part'
+        SupersessionGroup:
+          type: array
+          items:
+            $ref: '#/components/schemas/SupersessionGroup'
+        changeDate:
+          type: string
+          format: date-time # Added format
+        consumptionCode:
+          $ref: '#/components/schemas/SupersessionConsumptionCode'
+          description: |
+            Most of the time it is 1 use up. But can also scrap (A will be scrapped when B is in stock). Pre production not used that much (similar to NLA)
+            Supersession info;
+            1 = Use up, 2 = Scrap, 3 = Pre-production
+        creationDate:
+          type: string
+          format: date-time # Added format
+          description: Date when supersession was created.
+            E.g. "2016-01-19T00:00:00+02:00"
+        reason:
+          type: string
+          description: Referents to DCN (Design Change note), ECN (Engineer Change Note), etc. - Reason why the part was superseded
+        replacementCode:
+          $ref: '#/components/schemas/ReplacementCode' # Use the schema
+        supersessionType:
+          $ref: '#/components/schemas/SupersessionTypeCode'
+          description: Supersession Type describes how the substituion of a historical part should be done.
+            S = Single, M = Multiple, V = Variable, 0 = NLA
+    SupersessionConsumptionCode:
+      type: string
+      description: '1'
+      enum:
+        - '1 - Use Up'
+        - '2 - Scrap'
+        - '3 - Pre-Production'
+    SupersessionGroup:
+      type: object
+      properties:
+        SupersedingPart:
+          type: array
+          items:
+            $ref: '#/components/schemas/SupersedingPart'
+        ssChoiceDescription:
+          type: string
+          description: Used only for variable superssession . To inform what are the different groups of parts. If V (Variable) supersession then this is the text to shown
+        ssSequenceNumber:
+          type: integer
+          description: Sequence number on added parts in supersession E.g. 10
+    SupersessionStatus:
+      type: string
+      description: |
+        P = Preliminary (when Supersession is created)
+        F = Final (When AFTER_MARKET_USER) has sold out the old part
+
+        NEVER SEND OUT ANY SUPERSESSIONS THAT DON'T HAVE STATUS F (FINAL)
+      enum:
+        - P
+        - F
+    SupersessionTypeCode:
+      type: string
+      description: '"V"'
+      enum:
+        - '0 - No Longer Available'
+        - M
+        - S
+        - V
+    SupersessionWHDetails:
+      type: object
+      properties:
+        ssCreationDate:
+          type: string
+          format: date-time # Added format
+        ssFinalDate:
+          type: string
+          format: date-time # Added format
+          description: |
+            The date when Supersession got Final status (per AFTER_MARKET_USER = warehouseid)
+
+            NEVER SEND OUT ANY SUPERSESSIONS THAT DON'T HAVE STATUS F (FINAL)
+        ssOrderedFinalDate:
+          type: string
+          format: date-time # Added format
+          description: Used to set a fixed Final supersession date from GLOPPS to AFTER_MARKET_USER
+        ssStatus:
+          $ref: '#/components/schemas/SupersessionStatus'
+          description: |
+            P = Preliminary (when Supersession is created)
+            F = Final (When AFTER_MARKET_USER) has sold out the old part
+
+            NEVER SEND OUT ANY SUPERSESSIONS THAT DON'T HAVE STATUS F (FINAL)
+        warehouseId:
+          type: integer
+          description: |
+            The source field AFTER_MARKET_USER<b> </b>divided into 2, warehouseId and warehouseName
+
+            In what warehouse is the Part valid.
+
+            e.g. 100 = Gent/Eskilstuna, 4048 Byhalia/Columbus
+        warehouseName:
+          type: string
+          description: |
+            The source field AFTER_MARKET_USER<b> </b>divided into 2, warehouseId and warehouseName
+
+            In what warehouse is the Part valid.
+
+            e.g. 100 = Gent/Eskilstuna, 4048 Byhalia/Columbus
+    UOM:
+      type: string
+      description: '"PCE"'
+      enum:
+        - FT
+        - GA
+        - KT
+        - L
+        - M
+        - PCE
+        - SW
+    VitalCode:
+      type: string
+      description: '1'
+      enum:
+        - '1 - Critical components EPS'
+        - '2 - Critical repair parts EPS'
+        - '3 - Critical components and repair parts PS'
+        - '4 - Non Vital parts'
+    VolumeUnitOfMeasure:
+      type: string
+      enum:
+        - milliliter
+    Warehouse:
+      type: object
+      properties:
+        WarehousePart:
+          type: array
+          items:
+            $ref: '#/components/schemas/WarehousePart'
+        warehouseId:
+          type: integer
+          description: |
+            The source field AFTER_MARKET_USER<b> </b>divided into 2, warehouseId and warehouseName
+
+            In what warehouse is the Part valid.
+
+             e.g. 100 = Gent/Eskilstuna, 4048 Byhalia/Columbus
+        warehouseName:
+          type: string
+          description: |
+            The source field AFTER_MARKET_USER<b> </b>divided into 2, warehouseId and warehouseName
+
+            In what warehouse is the Part valid.
+
+            e.g. 100 = Gent/Eskilstuna, 4048 Byhalia/Columbus
+    WarehousePart:
+      type: object
+      properties:
+        Part:
+          type: array
+          items:
+            $ref: '#/components/schemas/Part'
+        Warehouse:
+          $ref: '#/components/schemas/Warehouse'
+        countryOfOrigin:
+          type: string
+        exportControlClassificationNumber:
+          type: string
+        harmonizedSystemCode:
+          type: string
+        isEnvironmentalRegulated:
+          type: boolean
+        isHazardous:
+          type: string
+        isReturnable:
+          type: boolean
+        minimumOrderQuantity:
+          type: integer
+        netVolume:
+          type: number # Changed to number
+        netWeight:
+          type: number # Changed to number
+        packageQuantity:
+          type: integer
+        partReleaseDate:
+          type: string
+          format: date-time
+        volumeUnitOfMeasure:
+          $ref: '#/components/schemas/VolumeUnitOfMeasure'
+        weightUnitOfMeasure:
+          $ref: '#/components/schemas/WeightUnitOfMeasure'
+    WeightUnitOfMeasure:
+      type: string
+      enum:
+        - KG
+        - gram
+    CommercialCode: # Changed the name to PascalCase
+      type: string
+      enum:
+        - AC
+        - AR
+        - AT
+        - 'Blank - ordinary part'
+        - PA
+        - PU
+        - RA
+        - WO
+    ExchangeCode: # Changed the name to PascalCase
+      type: string
+      description: '"X"'
+      enum:
+        - B
+        - C
+        - R
+        - X
+  examples:
+    SparePart_1_2_Description_en_GB:
+      value:
+        SparePart 1.2:
+          description: "High-Pressure Fuel Pump"
+          language: "en-GB"
+    SparePart_1_2_CoreReman:
+      value:
+        SparePart 1.2:
+          corePartNumber: "22233344"
+          corePartPrefix: "VOE"
+          remanPartNumber: "44433322"
+          remanPartPrefix: "VOE"
+    SparePart_1_2_InventoryQuantity:
+      value:
+        SparePart 1.2:
+          Part:
+            - id: "LGG_555666777"
+          inventoryType: "quantityOnHand"
+          quantity: 50
+    SparePart_1_2_InventoryTypeString:
+      value:
+        SparePart 1.2: "quantityOnHand"
+    SparePart_1_2_FullDetails:
+      value:
+        SparePart 1.2:
+          Description:
+            - description: "Hydraulic Filter Element"
+              language: "fr-CA"
+          ExchangeCross:
+            - corePartNumber: "99988877"
+              corePartPrefix: "VOE"
+              remanPartNumber: "77788899"
+              remanPartPrefix: "VOE"
+          Inventory:
+            - Part:
+                - id: "SA_111222333"
+              inventoryType: "quantityOnHand"
+              quantity: 25
+          PartsCatalog:
+            - catalogId: "12345"
+              machineModel: "EC220E"
+              productionStartYear: 2018
+          Price:
+            - Part:
+                - id: "VOE_444555666"
+              partPrice: 125.50
+              partPriceSensitivity: "2 - High quantity, low price sensitivity"
+              priceValidFromDate: "2024-01-15T00:00:00Z"
+              priceValidToDate: "2025-12-31T23:59:59Z"
+              typeOfPrice: "List Price"
+          SparePartPriceList:
+            - Part:
+                - id: "VOE_777888999"
+              currency: "USD"
+              priceListId: "US_SPPL_2024"
+          SupersessionWHDetails:
+            - ssCreationDate: "2023-05-20T00:00:00Z"
+              ssFinalDate: "2024-03-10T00:00:00Z"
+              ssOrderedFinalDate: "2024-02-25T00:00:00Z"
+              ssStatus: "F"
+              warehouseId: 100
+              warehouseName: "Gent/Eskilstuna"
+          WarehousePart:
+            - Part:
+                - id: "CH_333444555"
+              countryOfOrigin: "SE"
+              exportControlClassificationNumber: "EAR99"
+              harmonizedSystemCode: "8421230000"
+              isEnvironmentalRegulated: false
+              isHazardous: "NO"
+              isReturnable: true
+              minimumOrderQuantity: 1
+              netVolume: 100
+              netWeight: 0.5
+              packageQuantity: 10
+              partReleaseDate: "2022-11-01T00:00:00Z"
+              volumeUnitOfMeasure: "milliliter"
+              weightUnitOfMeasure: "gram"
+          changeDate: "2024-04-20"
+          changeReason: "Engineering Change"
+          commercialCode: "Blank - ordinary part"
+          engineeringRegistrationDate: "2020-08-15"
+          exchangeCode: "X"
+          exchangeDescription: "New part with Reman connection"
+          id: "VOE_123456789"
+          isConfigurable: false
+          isExchangePart: true
+          isSparePart: true
+          isSuperseded: false
+          mto: false
+          partFunctionGroup: "Filtration"
+          partMarketingCode: "HYD_FLT_STD"
+          partMasterRegistrationDate: "2020-01-10"
+          partNumber: "123456789"
+          partPrefix: "VOE"
+          partProductCode: "P123"
+          partProductGroup: 700
+          partProductLineCode: 2
+          partType: "D - Single Part"
+          partsCategory: 210
+          responibilityYear: "2030"
+          salesStatus: "Sellable"
+          unitOfMeasure: "PCE - Piece"
+          vitalCode: "4 - Non Vital parts"
+    SparePart_1_2_CommercialCode_CH:
+      value:
+        SparePart 1.2: "CH - Champion parts"
+    SparePart_1_2_CommercialCode_B:
+      value:
+        SparePart 1.2: "B - Blank"
+    SparePart_1_2_PriceDetails:
+      value:
+        SparePart 1.2:
+          Part:
+            - id: "EH_654321987"
+          partPrice: 55.75
+          partPriceSensitivity: "1 - Low quantity, low price sensitivity"
+          priceValidFromDate: "2023-11-01T00:00:00Z"
+          priceValidToDate: "2024-12-31T23:59:59Z"
+          typeOfPrice: "Dealer Net"
+    SparePart_1_2_PartsCatalogSimple:
+      value:
+        SparePart 1.2:
+          catalogId: "54321"
+          machineModel: "L90H"
+          productionStartYear: 2019
+    SparePart_1_2_ExchangeCode_0:
+      value:
+        SparePart 1.2: "0 - not in replacement"
+    SparePart_1_2_SalesStatus_Sellable:
+      value:
+        SparePart 1.2: "Sellable"
+    SparePart_1_2_PriceSensitivity_3:
+      value:
+        SparePart 1.2: "3 - Low quantity, high price sensitivity"
+    SparePart_1_2_PriceListBRL:
+      value:
+        SparePart 1.2:
+          Part:
+            - id: "SBR_010101010"
+          currency: "BRL"
+          priceListId: "BR_SPL_2025"
+    SparePart_1_2_MTO_m:
+      value:
+        SparePart 1.2: "m"
+    SparePart_1_2_SupersessionGroupSimple:
+      value:
+        SparePart 1.2:
+          SupersessionGroup:
+            - SupersedingPart:
+                - ssPartNumber: "98765432"
+                  ssPartPrefix: "VOE"
+                  ssQuantity: "1"
+                  ssQuantityUnitOfMeasure: "ea"
+              ssChoiceDescription: "Standard Replacement"
+              ssSequenceNumber: 10
+          ssPartNumber: "12345678"
+          ssPartPrefix: "VOE"
+          ssQuantity: "1"
+          ssQuantityUnitOfMeasure: "ea"
+    SparePart_1_2_SupersessionDetails:
+      value:
+        SparePart 1.2:
+          Part:
+            - id: "SK_192837465"
+          SupersessionGroup:
+            - SupersedingPart:
+                - ssPartNumber: "56789012"
+                  ssPartPrefix: "VOE"
+                  ssQuantity: "2"
+                  ssQuantityUnitOfMeasure: "PCE"
+              ssChoiceDescription: "Alternative Option"
+              ssSequenceNumber: 20
+          changeDate: "2025-01-10"
+          consumptionCode: "1 - Use Up"
+          creationDate: "2024-07-01T00:00:00Z"
+          reason: "Improved Design"
+          replacementCode: "22 - after goods reciept new part, final replaced"
+          supersessionType: "S -Single"
+    SparePart_1_2_VitalCode_2:
+      value:
+        SparePart 1.2: "2 - Scrap"
+    SparePart_1_2_SupersedingPartOnly:
+      value:
+        SparePart 1.2:
+          SupersedingPart:
+            - ssPartNumber: "01928374"
+              ssPartPrefix: "VOE"
+              ssQuantity: "1"
+              ssQuantityUnitOfMeasure: "ea"
+          ssChoiceDescription: "First Choice"
+          ssSequenceNumber: 10
+    SparePart_1_2_EmptyString:
+      value:
+        SparePart 1.2: ""
+    SparePart_1_2_SupersessionType_M:
+      value:
+        SparePart 1.2: "M - Multiple"
+    SparePart_1_2_SupersessionWHDetailsSimple:
+      value:
+        SparePart 1.2:
+          ssCreationDate: "2022-12-01T00:00:00Z"
+          ssFinalDate: "2023-10-15T00:00:00Z"
+          ssOrderedFinalDate: "2023-09-30T00:00:00Z"
+          ssStatus: "F"
+          warehouseId: 4048
+          warehouseName: "Byhalia/Columbus"
+    SparePart_1_2_PartType_L:
+      value:
+        SparePart 1.2: "L"
+    SparePart_1_2_VitalCode_3:
+      value:
+        SparePart 1.2: "3 - Critical components and repair parts PS"
+    SparePart_1_2_VolumeUOM_milliliter:
+      value:
+        SparePart 1.2: "milliliter"
+    SparePart_1_2_WarehousePartDetails:
+      value:
+        SparePart 1.2:
+          WarehousePart:
+            - Part:
+                - id: "SNA_999000111"
+              countryOfOrigin: "US"
+              exportControlClassificationNumber: "NLR"
+              harmonizedSystemCode: "8708990000"
+              isEnvironmentalRegulated: true
+              isHazardous: "YES"
+              isReturnable: false
+              minimumOrderQuantity: 5
+              netVolume: 500
+              netWeight: 2.1
+              packageQuantity: 1
+              partReleaseDate: "2021-06-01T00:00:00Z"
+              volumeUnitOfMeasure: "milliliter"
+              weightUnitOfMeasure: "KG"
+          warehouseId: 100
+          warehouseName: "Gent/Eskilstuna"
+    SparePart_1_2_WarehouseWithPartDetails:
+      value:
+        SparePart 1.2:
+          Part:
+            - id: "SP_222333444"
+          Warehouse:
+            warehouseId: 4048
+            warehouseName: "Byhalia/Columbus"
+          countryOfOrigin: "MX"
+          exportControlClassificationNumber: "UNK"
+          harmonizedSystemCode: "8507100000"
+          isEnvironmentalRegulated: false
+          isHazardous: "NO"
+          isReturnable: true
+          minimumOrderQuantity: 2
+          netVolume: 250
+          netWeight: 1.5
+          packageQuantity: 4
+          partReleaseDate: "2023-03-15T00:00:00Z"
+          volumeUnitOfMeasure: "milliliter"
+          weightUnitOfMeasure: "KG"
+    SparePart_1_2_WeightUOM_gram:
+      value:
+        SparePart 1.2: "gram"
+    SparePart_1_2_PartsCategory_AC:
+      value:
+        SparePart 1.2: "AC - Accessories"
+    SparePart_1_2_ExchangeCode_R:
+      value:
+        SparePart 1.2: "R"
