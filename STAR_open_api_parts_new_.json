@@ -1,0 +1,131 @@
+﻿{
+      "SparePart_1_2": {
+          "SparePart_1_2": {
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Description"
+              },
+              {
+                "$ref": "#/components/schemas/ExchangeCross"
+              },
+              {
+                "$ref": "#/components/schemas/Inventory"
+              },
+              {
+                "$ref": "#/components/schemas/InventoryType"
+              },
+              {
+                "$ref": "#/components/schemas/Part"
+              },
+              {
+                "$ref": "#/components/schemas/PartPrefix"
+              },
+              {
+                "$ref": "#/components/schemas/PartType"
+              },
+              {
+                "$ref": "#/components/schemas/PartsCatalog"
+              },
+              {
+                "$ref": "#/components/schemas/Price"
+              },
+              {
+                "$ref": "#/components/schemas/ReplacementCode"
+              },
+              {
+                "$ref": "#/components/schemas/SalesStatus"
+              },
+              {
+                "$ref": "#/components/schemas/SensitivityType"
+              },
+              {
+                "$ref": "#/components/schemas/SparePartPriceList"
+              },
+              {
+                "$ref": "#/components/schemas/SsQuantityUnitOfMeasure"
+              },
+              {
+                "$ref": "#/components/schemas/SupersedingPart"
+              },
+              {
+                "$ref": "#/components/schemas/Supersession"
+              },
+              {
+                "$ref": "#/components/schemas/SupersessionConsumptionCode"
+              },
+              {
+                "$ref": "#/components/schemas/SupersessionGroup"
+              },
+              {
+                "$ref": "#/components/schemas/SupersessionStatus"
+              },
+              {
+                "$ref": "#/components/schemas/SupersessionTypeCode"
+              },
+              {
+                "$ref": "#/components/schemas/SupersessionWHDetails"
+              },
+              {
+                "$ref": "#/components/schemas/UOM"
+              },
+              {
+                "$ref": "#/components/schemas/VitalCode"
+              },
+              {
+                "$ref": "#/components/schemas/VolumeUnitOfMeasure"
+              },
+              {
+                "$ref": "#/components/schemas/Warehouse"
+              },
+              {
+                "$ref": "#/components/schemas/WarehousePart"
+              },
+              {
+                "$ref": "#/components/schemas/WeightUnitOfMeasure"
+              },
+              {
+                "$ref": "#/components/schemas/CommercialCode"
+              },
+              {
+                "$ref": "#/components/schemas/ExchangeCode"
+              }
+            ]
+          }
+        }
+      },
+      "Description": {
+        "type": "object",
+        "properties": {
+          "description": {
+            "type": "string"
+          },
+          "language": {
+            "type": "string",
+            "description": "The language code is a combination of an ISO 639 two-letter lowercase culture code associated with a language and an ISO 3166 two-letter uppercase subculture code associated with a country or region."
+          }
+        }
+      },
+      "ExchangeCross": {
+        "type": "object",
+        "description": "Provided when a Reman part is available",
+        "properties": {
+          "corePartNumber": {
+            "type": "string",
+            "description": "Core Part Number (Core part to return) = partNumber"
+          },
+          "corePartPrefix": {
+            "$ref": "#/components/schemas/PartPrefix",
+            "description": "Core Prefix (Core part to return) = partPrefix"
+          },
+          "remanPartNumber": {
+            "type": "string",
+            "description": "Reman Part Number (Remanufactured part) = partNumber"
+          },
+          "remanPartPrefix": {
+            "$ref": "#/components/schemas/PartPrefix",
+            "description": "Reman Prefix (Remanufactured part) = partPrefix"
+          }
+        }
+      },
+            "$ref": "#/components/schemas/UOM"
