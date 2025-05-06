@@ -1,20 +1,5 @@
-﻿{
-  "openapi": "3.0.4",
-  "info": {
-    "title": "Parts STAR",
-    "description": "Parts",
-    "termsOfService": "https://swagger.io/terms/",
-    "version": "0.1",
-    "contact": {
-      "email": "apiteam@swagger.io"
-    }
-  },
-  "paths": {},
-  "components": {
-    "schemas": {
+{
       "SparePart_1_2": {
-        "type": "object",
-        "properties": {
           "SparePart_1_2": {
             "type": "object",
             "anyOf": [
